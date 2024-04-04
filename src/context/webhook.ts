@@ -45,7 +45,7 @@ export function useWebhook(id: string) {
 export function useWebhookMutation() {
   const queryClient = useQueryClient();
   const karrio = useKarrio();
-  const invalidateCache = () => { queryClient.invalidateQueries(['webhooks']) };
+  const invalidateCache = () => { queryClient.invalidateQueries({ queryKey: ['webhooks'] }) };
 
   // Mutations
   const createWebhook = useMutation(
