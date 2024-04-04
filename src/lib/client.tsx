@@ -85,7 +85,7 @@ function setupRestClient(host: string, session?: SessionType): KarrioClient {
 function setupGraphQLClient(host: string, session?: SessionType) {
   const axiosInstance = axios.create({ baseURL: host });
   axiosInstance.interceptors.request.use((config: AxiosRequestConfig<any>) => {
-  return requestInterceptor(session)(config) as AxiosRequestConfig<any>;
+  return requestInterceptor(session)(config);
 });
 
   async function request<T>(query: string, args?: requestArgs): Promise<T> {
