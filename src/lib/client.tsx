@@ -74,7 +74,7 @@ function setupRestClient(host: string, session?: SessionType): KarrioClient {
   const client = new KarrioClient({ basePath: url$`${host || ''}` });
 
   client.axios.interceptors.request.use((config) => {
-  const modifiedConfig: InternalAxiosRequestConfig = requestInterceptor(session)(config);
+  const modifiedConfig: AxiosRequestConfig = requestInterceptor(session)(config);
   modifiedConfig.headers = modifiedConfig.headers || {};
   return modifiedConfig;
 });
