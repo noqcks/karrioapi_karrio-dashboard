@@ -16,7 +16,7 @@ export function useWebhooks() {
   const query = useQuery(
     ['webhooks'],
     () => karrio.graphql$.request<get_webhooks>(gqlstr(GET_WEBHOOKS), { variables: filter }),
-    { keepPreviousData: true, staleTime: 5000, onError },
+    { keepPreviousData: true, staleTime: 5000, onError: onError },
   );
 
   return {
