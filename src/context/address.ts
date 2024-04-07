@@ -15,7 +15,7 @@ export function useAddressTemplates() {
   const query = useQuery(
     ['addresses', filter],
     () => karrio.graphql$.request<get_address_templates>(gqlstr(GET_ADDRESS_TEMPLATES), { variables: filter }),
-    { onError },
+    { onError: onError },
   );
 
   return {
