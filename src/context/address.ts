@@ -29,8 +29,8 @@ export function useAddressTemplateMutation() {
   const karrio = useKarrio();
   const queryClient = useQueryClient();
   const invalidateCache = () => {
-    queryClient.invalidateQueries(['addresses']);
-    queryClient.invalidateQueries(['default_templates']);
+    queryClient.invalidateQueries({ queryKey: ['addresses'] });
+    queryClient.invalidateQueries({ queryKey: ['default_templates'] });
   };
 
   // Mutations
