@@ -36,7 +36,7 @@ const APIMetadataProvider: React.FC<{ metadata: Metadata }> = ({ children, metad
         .then(({ data }) => data)
     ),
     staleTime: 5000,
-    onError
+    onError: (error) => onError(error)
   });
 
   return (
